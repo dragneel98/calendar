@@ -1,0 +1,13 @@
+<section class="calendar-container">
+  <button mat-button color="primary"></button>
+  <article class="calendar-content">
+    @for (item of headers; track headers){
+    <span> {{ item }} </span>
+    }
+    @for (item of calendarDate; track calendarDate){
+    <div class="calendar-item">
+      <span> {{ item.day }} </span>
+    </div>
+    }
+  </article>
+</section>

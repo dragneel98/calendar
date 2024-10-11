@@ -1,0 +1,20 @@
+
+.calendar-container{
+  width: 100%;
+  /* padding: 1em; */
+}
+.calendar-content{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--border-color);
+ margin: 1em;
+}
+.calendar-item{
+  padding: 0.3em;
+  min-height: 7em;
+  border-top: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
+.calendar-item:nth-child(7n) {
+  border-right: 1px solid var(--border-color);
+}

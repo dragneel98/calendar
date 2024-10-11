@@ -1,0 +1,17 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4em;
+  background-color: rgb(78, 77, 77);
+  padding: 0 4em;
+  margin-bottom: 1em;
+}
+
+img{
+  height: 3em;
+}
+
+button{
+
+}

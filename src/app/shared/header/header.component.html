@@ -1,0 +1,14 @@
+<header>
+  <a href="">
+    <img src="" />
+  </a>
+  @if(showButtons){
+  <section>
+    @if(isAuthenticated){
+    <button mat-button color="secondary" (click)="authService.logout()">cerrar sesion</button>
+    } @else {
+    <button mat-button color="primary" (click)="authService.loginWithPopup()">iniciar sesion</button>
+    }
+  </section>
+  }
+</header>
