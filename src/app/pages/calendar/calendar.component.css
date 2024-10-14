@@ -14,6 +14,20 @@
   min-height: 7em;
   border-top: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
+  color: var(--border-color);
+}
+.current-month{
+  color: black;
+}
+.current-day{
+  background-color: var(--current-day);
+  color: white;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  padding: 0.3em;
+  display: grid;
+  place-content: center;
 }
 .calendar-item:nth-child(7n) {
   border-right: 1px solid var(--border-color);

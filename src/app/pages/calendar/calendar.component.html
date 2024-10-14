@@ -1,12 +1,13 @@
 <section class="calendar-container">
-  <button mat-button color="primary"></button>
+  <button mat-button color="primary" (click)="openModal()">ADD EVENT</button>
   <article class="calendar-content">
-    @for (item of headers; track headers){
-    <span> {{ item }} </span>
+    @for (header of headers; track header){
+    <span> {{ header }} </span>
     }
-    @for (item of calendarDate; track calendarDate){
-    <div class="calendar-item">
-      <span> {{ item.day }} </span>
+    @for (item of calendarData; let calendarIndex = $index; track item){
+    <div class="calendar-item" >
+      <span [ngClass]="[item.isCurrentMonth ? 'current-month' : '', item.isCurrentDay ? 'current-day' : '']">
+        {{ item.day }} </span>
     </div>
     }
   </article>
