@@ -7,7 +7,30 @@
     @for (item of calendarData; let calendarIndex = $index; track item){
     <div class="calendar-item" >
       <span [ngClass]="[item.isCurrentMonth ? 'current-month' : '', item.isCurrentDay ? 'current-day' : '']">
-        {{ item.day }} </span>
+        {{ item.day }}
+      </span>
+      <div>
+      @for (event of item.events;  let eventIndex= $index; track event){
+        <button [matTooltip]="event.name" [matMenuTriggerFor]="menu">
+          <mat-icon> {{event.icon}} </mat-icon>
+          <p> {{event.name}} </p>
+        </button>
+        <!-- <button mat-button >Menu</button> -->
+        <mat-menu #menu="matMenu">
+          <div class="menu-container">
+            <button>
+              <mat-icon> {{event.icon}} </mat-icon>
+              <p> {{event.name}} </p>
+            </button>
+            <p>fecha: {{event.date | date: 'YYYY/MM/DD'}} </p>
+          </div>
+          <div>
+            <button mat-button color="primary" (click)="openModalEdit(event)">Editar</button>
+            <button mat-button color="warn" (click)="removeEvent(calendarIndex, eventIndex)">Eliminar</button>
+          </div>
+        </mat-menu>
+      }
+      </div>
     </div>
     }
   </article>

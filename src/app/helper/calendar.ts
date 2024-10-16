@@ -1,5 +1,3 @@
-// import { NCalendar } from "../model/calendar.model";
-
 import { NCalendar } from "../models/calendar.model";
 
 export function findEvent(newCalendarData: NCalendar.Body[], item: NCalendar.IEvent): NCalendar.FindEvent {
@@ -19,7 +17,6 @@ export function createEvent(newCalendarData: NCalendar.Body[], item: NCalendar.I
         newCalendarData[selectedIndex].events.push(item);
     }
     console.log(newCalendarData, " ", item);
-
 }
 
 export function updateEvent(newCalendarData: NCalendar.Body[], item: NCalendar.IEvent, foundEvent: NCalendar.FoundEvent) {
